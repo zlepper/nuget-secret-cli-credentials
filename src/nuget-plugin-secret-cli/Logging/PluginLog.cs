@@ -10,7 +10,7 @@ namespace NuGetSecretCliCredentials.Logging;
 /// <remarks>NuGet doesn't redirect the plugin's stderr, so anything written there lands in the user's terminal.</remarks>
 internal sealed class PluginLog(TextWriter standardError) : IPluginLog
 {
-    private const string Prefix = "[nuget-plugin-op] ";
+    private const string Prefix = "[nuget-plugin-secret-cli] ";
     private readonly Lock _lock = new();
     private IConnection? _connection;
     private LogLevel? _minimumLevel;

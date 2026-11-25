@@ -43,7 +43,7 @@ let
   };
 
   inherit (evaluated) config;
-  pluginLink = config.home.file.".nuget/plugins/netcore/nuget-plugin-op";
+  pluginLink = config.home.file.".nuget/plugins/netcore/nuget-plugin-secret-cli";
   configFile = config.xdg.configFile."nuget-secret-cli-credentials/config.json";
 in
 pkgs.runCommand "nuget-secret-cli-credentials-hm-module-check"
@@ -53,8 +53,8 @@ pkgs.runCommand "nuget-secret-cli-credentials-hm-module-check"
     inherit (configFile) source;
   }
   ''
-    test -f "$pluginSource/nuget-plugin-op.dll"
-    test -f "$pluginSource/nuget-plugin-op.runtimeconfig.json"
+    test -f "$pluginSource/nuget-plugin-secret-cli.dll"
+    test -f "$pluginSource/nuget-plugin-secret-cli.runtimeconfig.json"
     test "${lib.boolToString pluginLink.recursive}" = true
     grep -q 'plugins-cache' <<'EOF'
     ${pluginLink.onChange}

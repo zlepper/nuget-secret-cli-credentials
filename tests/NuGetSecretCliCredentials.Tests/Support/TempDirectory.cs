@@ -4,7 +4,7 @@ internal sealed class TempDirectory : IDisposable
 {
     public TempDirectory()
     {
-        Path = Directory.CreateTempSubdirectory("nuget-plugin-op-tests-").FullName;
+        Path = Directory.CreateTempSubdirectory("nuget-plugin-secret-cli-tests-").FullName;
     }
 
     public string Path { get; }

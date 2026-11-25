@@ -51,7 +51,7 @@ internal sealed class CredentialService(PluginConfig config, SecretResolver reso
     {
         if (SourceMatcher.Match(config.Sources, uri) is not { } source)
         {
-            return CredentialResult.NotFound($"nuget-plugin-op serves no source for {uri}.");
+            return CredentialResult.NotFound($"nuget-plugin-secret-cli serves no source for {uri}.");
         }
 
         // One resolution per source at a time, so concurrent requests during a restore share one 1Password prompt.
@@ -66,7 +66,7 @@ internal sealed class CredentialService(PluginConfig config, SecretResolver reso
             }
             else if (_cache.TryGetValue(source, out var cached))
             {
-                return CredentialResult.Found(cached, $"Credentials for {source} from nuget-plugin-op (cached).");
+                return CredentialResult.Found(cached, $"Credentials for {source} from nuget-plugin-secret-cli (cached).");
             }
 
             if (isNonInteractive && config.NonInteractive == NonInteractiveMode.Skip && UsesOnePassword(source)
@@ -91,7 +91,7 @@ internal sealed class CredentialService(PluginConfig config, SecretResolver reso
             var credential = new Credential(username.Value, password.Value);
             _cache[source] = credential;
             log.Log(LogLevel.Verbose, $"Read credentials for {source}.");
-            return CredentialResult.Found(credential, $"Credentials for {source} from nuget-plugin-op.");
+            return CredentialResult.Found(credential, $"Credentials for {source} from nuget-plugin-secret-cli.");
         }
         finally
         {

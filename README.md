@@ -1,6 +1,6 @@
 # nuget-secret-cli-credentials
 
-A NuGet credential provider (`nuget-plugin-op`) that reads feed tokens at restore time from **1Password**, through
+A NuGet credential provider (`nuget-plugin-secret-cli`) that reads feed tokens at restore time from **1Password**, through
 the `op` CLI, or from the **GitHub CLI**'s own login, through `gh auth token`. No token is ever written to
 `NuGet.Config`, any other file, or an environment variable.
 
@@ -18,7 +18,7 @@ works the same from the `dotnet` CLI, MSBuild, Rider and VS Code. This plugin an
 ## Install (NixOS / home-manager)
 
 The flake provides the package and a home-manager module. The module:
-- links the plugin into NuGet's convention folder, `~/.nuget/plugins/netcore/nuget-plugin-op/`, which works whatever
+- links the plugin into NuGet's convention folder, `~/.nuget/plugins/netcore/nuget-plugin-secret-cli/`, which works whatever
   `PATH` a desktop-launched IDE has;
 - writes the config file;
 - clears NuGet's plugins cache whenever either changes.
@@ -99,7 +99,7 @@ references only, never secrets. Without Nix, write it by hand:
 ### Without Nix
 
 ```sh
-dotnet publish src/nuget-plugin-op -c Release -o ~/.nuget/plugins/netcore/nuget-plugin-op
+dotnet publish src/nuget-plugin-secret-cli -c Release -o ~/.nuget/plugins/netcore/nuget-plugin-secret-cli
 dotnet nuget locals plugins-cache --clear
 ```
 
@@ -159,7 +159,7 @@ IDE restores and plain `dotnet restore` tell the plugin they are non-interactive
 ## Troubleshooting
 
 - **Watch the plugin.** `dotnet restore -v detailed` shows plugin discovery
-  (`Using …/nuget-plugin-op.dll as a credential provider plugin`) and the plugin's `[nuget-plugin-op]` log lines.
+  (`Using …/nuget-plugin-secret-cli.dll as a credential provider plugin`) and the plugin's `[nuget-plugin-secret-cli]` log lines.
 - **Plugin not asked, or feeds changed but nothing happens.** NuGet caches each plugin's claims for 30 days in
   `~/.local/share/NuGet/plugins-cache` (or `NUGET_PLUGINS_CACHE_PATH`). Run
   `dotnet nuget locals plugins-cache --clear`. The home-manager module does this on every change.
@@ -179,12 +179,12 @@ IDE restores and plain `dotnet restore` tell the plugin they are non-interactive
 nix develop          # .NET 10 SDK and gh; op comes from the system
 dotnet test          # unit, protocol (in and out of process) and end-to-end restore tests
 nix flake check      # builds the package and checks the home-manager module
-nix build            # result/lib/nuget-plugin-op/nuget-plugin-op.dll
+nix build            # result/lib/nuget-plugin-secret-cli/nuget-plugin-secret-cli.dll
 ```
 
 - **Tests** use fake `op` and `gh` shell scripts, so they never touch your real accounts. The end-to-end test runs
   `dotnet restore` against a local feed that requires basic auth, with a `NuGet.Config` that has no credentials.
-- **Testing another build.** `NUGET_PLUGIN_OP_TEST_PLUGIN_PATH=/abs/path/to/nuget-plugin-op.dll dotnet test`
+- **Testing another build.** `NUGET_PLUGIN_SECRET_CLI_TEST_PLUGIN_PATH=/abs/path/to/nuget-plugin-secret-cli.dll dotnet test`
   points the out-of-process and end-to-end tests at that build, for example the Nix build.
 - **After changing package references,** regenerate the Nix lock file:
   `nix build .#default.fetch-deps -o fetch-deps && ./fetch-deps nix/deps.json`.

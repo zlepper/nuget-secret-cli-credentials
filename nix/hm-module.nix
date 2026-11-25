@@ -54,7 +54,7 @@ let
 in
 {
   options.programs.nuget-secret-cli-credentials = {
-    enable = lib.mkEnableOption "the nuget-plugin-op NuGet credential provider";
+    enable = lib.mkEnableOption "the nuget-plugin-secret-cli NuGet credential provider";
 
     package = mkOption {
       type = types.package;
@@ -113,8 +113,8 @@ in
 
   config = lib.mkIf cfg.enable {
     # Linked file by file, so deps.json and runtimeconfig.json sit next to the dll.
-    home.file.".nuget/plugins/netcore/nuget-plugin-op" = {
-      source = "${cfg.package}/lib/nuget-plugin-op";
+    home.file.".nuget/plugins/netcore/nuget-plugin-secret-cli" = {
+      source = "${cfg.package}/lib/nuget-plugin-secret-cli";
       recursive = true;
       onChange = clearPluginsCache;
     };

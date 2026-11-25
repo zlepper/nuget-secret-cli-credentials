@@ -109,9 +109,9 @@ internal sealed class TestFeed : IDisposable
         {
             Id = PackageId,
             Version = NuGetVersion.Parse(PackageVersion),
-            Description = "Test package for nuget-plugin-op.",
+            Description = "Test package for nuget-plugin-secret-cli.",
         };
-        builder.Authors.Add("nuget-plugin-op tests");
+        builder.Authors.Add("nuget-plugin-secret-cli tests");
         builder.Files.Add(new PhysicalPackageFile { SourcePath = placeholder, TargetPath = "lib/netstandard2.0/_._" });
 
         using var stream = new MemoryStream();

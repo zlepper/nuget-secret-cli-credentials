@@ -5,7 +5,7 @@
 }:
 
 buildDotnetModule {
-  pname = "nuget-plugin-op";
+  pname = "nuget-plugin-secret-cli";
   version = "0.1.0";
 
   src = lib.fileset.toSource {
@@ -19,7 +19,7 @@ buildDotnetModule {
     ];
   };
 
-  projectFile = "src/nuget-plugin-op/nuget-plugin-op.csproj";
+  projectFile = "src/nuget-plugin-secret-cli/nuget-plugin-secret-cli.csproj";
   # Regenerate after changing package references: nix build .#default.fetch-deps && ./result nix/deps.json
   nugetDeps = ./deps.json;
 

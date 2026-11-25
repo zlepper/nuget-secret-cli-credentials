@@ -15,7 +15,7 @@ internal sealed class GetAuthenticationCredentialsRequestHandler(PluginContext c
 
         if (context.Credentials is not { } credentials)
         {
-            return NotFound("nuget-plugin-op has no usable configuration; see the earlier warning.");
+            return NotFound("nuget-plugin-secret-cli has no usable configuration; see the earlier warning.");
         }
 
         var result = await credentials

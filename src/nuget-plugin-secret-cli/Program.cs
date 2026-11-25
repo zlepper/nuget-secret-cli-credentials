@@ -10,7 +10,7 @@ internal static class Program
 {
     private const string Usage =
         """
-        nuget-plugin-op: a NuGet credential provider that reads feed credentials with the 1Password CLI (op)
+        nuget-plugin-secret-cli: a NuGet credential provider that reads feed credentials with the 1Password CLI (op)
         or the GitHub CLI (gh).
 
         NuGet starts this program with -Plugin and talks to it over stdin/stdout; it is not meant to be run by hand.
