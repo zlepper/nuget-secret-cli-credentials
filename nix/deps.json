@@ -1,0 +1,47 @@
+[
+  {
+    "pname": "Newtonsoft.Json",
+    "version": "13.0.3",
+    "hash": "sha256-hy/BieY4qxBWVVsDqqOPaLy1QobiIapkbrESm6v2PHc="
+  },
+  {
+    "pname": "NuGet.Common",
+    "version": "8.0.0",
+    "hash": "sha256-krP5w4FzeGGpZf1hwjiEU13ETIwH0trR8Oo3L9X77TU="
+  },
+  {
+    "pname": "NuGet.Configuration",
+    "version": "8.0.0",
+    "hash": "sha256-5+ZswQV1mXzupJT4E4ETU9FFugZsYFPLIHspIigIF3k="
+  },
+  {
+    "pname": "NuGet.Frameworks",
+    "version": "8.0.0",
+    "hash": "sha256-E5ul5am6sN1v7Oynka0Fm1xaY2zbCqG9rjYtRBQytzY="
+  },
+  {
+    "pname": "NuGet.Packaging",
+    "version": "8.0.0",
+    "hash": "sha256-3Zk+ue1fFTE46y1H865xkE1nzzloFZJfD9WpURZXeZs="
+  },
+  {
+    "pname": "NuGet.Protocol",
+    "version": "8.0.0",
+    "hash": "sha256-vbSmNXsR6eNPeIuIKJ2psELr2MNiMV34RgGhhz5TNf4="
+  },
+  {
+    "pname": "NuGet.Versioning",
+    "version": "8.0.0",
+    "hash": "sha256-UzA6qEqQ4qfNMypiAHM8EnSL5bXX1qiz08lIDfD7ZWU="
+  },
+  {
+    "pname": "System.Security.Cryptography.Pkcs",
+    "version": "10.0.15",
+    "hash": "sha256-ctNJYS2jnSHuLuRd+89Fx9gJCMz6vVtk2lumHHG0amA="
+  },
+  {
+    "pname": "System.Security.Cryptography.ProtectedData",
+    "version": "8.0.0",
+    "hash": "sha256-fb0pa9sQxN+mr0vnXg1Igbx49CaOqS+GDkTfWNboUvs="
+  }
+]
