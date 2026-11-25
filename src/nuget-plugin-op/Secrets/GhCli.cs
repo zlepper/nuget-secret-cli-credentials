@@ -1,8 +1,8 @@
 using NuGet.Common;
-using NuGetOpCredentialProvider.Config;
-using NuGetOpCredentialProvider.Logging;
+using NuGetSecretCliCredentials.Config;
+using NuGetSecretCliCredentials.Logging;
 
-namespace NuGetOpCredentialProvider.Secrets;
+namespace NuGetSecretCliCredentials.Secrets;
 
 /// <summary>Reads the GitHub CLI's own OAuth token (<c>gh auth token</c>) for a <c>gh://&lt;host&gt;</c> reference.</summary>
 internal sealed class GhCli(PluginConfig config, IPluginLog log, string? pathVariable)

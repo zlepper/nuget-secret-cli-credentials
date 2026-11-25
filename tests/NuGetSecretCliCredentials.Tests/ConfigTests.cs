@@ -1,8 +1,8 @@
 using System.Text.Json.Nodes;
-using NuGetOpCredentialProvider.Config;
-using NuGetOpCredentialProvider.Tests.Support;
+using NuGetSecretCliCredentials.Config;
+using NuGetSecretCliCredentials.Tests.Support;
 
-namespace NuGetOpCredentialProvider.Tests;
+namespace NuGetSecretCliCredentials.Tests;
 
 public sealed class ConfigTests
 {
@@ -60,10 +60,10 @@ public sealed class ConfigTests
     [Test]
     public void Default_path_follows_XDG_CONFIG_HOME_and_falls_back_to_dot_config()
     {
-        Assert.That(ConfigLoader.DefaultPath(_ => "/xdg"), Is.EqualTo("/xdg/nuget-op-credential-provider/config.json"));
+        Assert.That(ConfigLoader.DefaultPath(_ => "/xdg"), Is.EqualTo("/xdg/nuget-secret-cli-credentials/config.json"));
 
         var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        var fallback = Path.Combine(home, ".config", "nuget-op-credential-provider", "config.json");
+        var fallback = Path.Combine(home, ".config", "nuget-secret-cli-credentials", "config.json");
         Assert.That(ConfigLoader.DefaultPath(_ => null), Is.EqualTo(fallback));
         Assert.That(ConfigLoader.DefaultPath(_ => "relative/path"), Is.EqualTo(fallback), "XDG requires an absolute path");
     }

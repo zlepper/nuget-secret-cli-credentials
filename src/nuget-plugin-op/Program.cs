@@ -1,10 +1,10 @@
 using NuGet.Common;
 using NuGet.Protocol.Plugins;
-using NuGetOpCredentialProvider.Config;
-using NuGetOpCredentialProvider.Handlers;
-using NuGetOpCredentialProvider.Logging;
+using NuGetSecretCliCredentials.Config;
+using NuGetSecretCliCredentials.Handlers;
+using NuGetSecretCliCredentials.Logging;
 
-namespace NuGetOpCredentialProvider;
+namespace NuGetSecretCliCredentials;
 
 internal static class Program
 {
@@ -14,7 +14,7 @@ internal static class Program
         or the GitHub CLI (gh).
 
         NuGet starts this program with -Plugin and talks to it over stdin/stdout; it is not meant to be run by hand.
-        Configuration: $XDG_CONFIG_HOME/nuget-op-credential-provider/config.json (default ~/.config/...).
+        Configuration: $XDG_CONFIG_HOME/nuget-secret-cli-credentials/config.json (default ~/.config/...).
         """;
 
 

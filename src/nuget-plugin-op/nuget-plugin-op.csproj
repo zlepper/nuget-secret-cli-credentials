@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <AssemblyName>nuget-plugin-op</AssemblyName>
-    <RootNamespace>NuGetOpCredentialProvider</RootNamespace>
+    <RootNamespace>NuGetSecretCliCredentials</RootNamespace>
     <InvariantGlobalization>true</InvariantGlobalization>
     <TieredPGO>true</TieredPGO>
     <UseAppHost>false</UseAppHost>
@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="NuGetOpCredentialProvider.Tests" />
+    <InternalsVisibleTo Include="NuGetSecretCliCredentials.Tests" />
   </ItemGroup>
 
 </Project>

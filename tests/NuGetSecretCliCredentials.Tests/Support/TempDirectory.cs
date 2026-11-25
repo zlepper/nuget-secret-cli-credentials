@@ -1,4 +1,4 @@
-namespace NuGetOpCredentialProvider.Tests.Support;
+namespace NuGetSecretCliCredentials.Tests.Support;
 
 internal sealed class TempDirectory : IDisposable
 {

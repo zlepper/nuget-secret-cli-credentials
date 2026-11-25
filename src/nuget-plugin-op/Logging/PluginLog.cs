@@ -1,7 +1,7 @@
 using NuGet.Common;
 using NuGet.Protocol.Plugins;
 
-namespace NuGetOpCredentialProvider.Logging;
+namespace NuGetSecretCliCredentials.Logging;
 
 /// <summary>
 /// Until NuGet has sent <c>SetLogLevel</c>, writes warnings and errors to stderr; after that, forwards messages at or

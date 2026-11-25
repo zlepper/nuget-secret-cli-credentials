@@ -1,8 +1,8 @@
 using System.Collections.Concurrent;
 using NuGet.Common;
-using NuGetOpCredentialProvider.Logging;
+using NuGetSecretCliCredentials.Logging;
 
-namespace NuGetOpCredentialProvider.Tests.Support;
+namespace NuGetSecretCliCredentials.Tests.Support;
 
 internal sealed class RecordingLog : IPluginLog
 {

@@ -1,10 +1,10 @@
 using System.Collections.Concurrent;
 using NuGet.Common;
-using NuGetOpCredentialProvider.Config;
-using NuGetOpCredentialProvider.Logging;
-using NuGetOpCredentialProvider.Secrets;
+using NuGetSecretCliCredentials.Config;
+using NuGetSecretCliCredentials.Logging;
+using NuGetSecretCliCredentials.Secrets;
 
-namespace NuGetOpCredentialProvider.Credentials;
+namespace NuGetSecretCliCredentials.Credentials;
 
 internal sealed class Credential(Secret username, Secret password)
 {

@@ -1,8 +1,8 @@
 using NuGet.Common;
 using NuGet.Protocol.Plugins;
-using NuGetOpCredentialProvider.Logging;
+using NuGetSecretCliCredentials.Logging;
 
-namespace NuGetOpCredentialProvider.Handlers;
+namespace NuGetSecretCliCredentials.Handlers;
 
 /// <summary>
 /// Deserializes a request, runs <see cref="HandleRequestAsync"/> and sends the response. Payloads are never logged,

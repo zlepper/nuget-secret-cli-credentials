@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace NuGetOpCredentialProvider.Config;
+namespace NuGetSecretCliCredentials.Config;
 
 /// <summary>The on-disk shape of <c>config.json</c>.</summary>
 internal sealed class ConfigFile

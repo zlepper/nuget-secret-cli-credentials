@@ -1,4 +1,4 @@
-namespace NuGetOpCredentialProvider.Config;
+namespace NuGetSecretCliCredentials.Config;
 
 internal static class SourceMatcher
 {

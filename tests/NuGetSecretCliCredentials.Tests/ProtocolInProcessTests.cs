@@ -1,11 +1,11 @@
 using System.Text.Json.Nodes;
 using NuGet.Protocol.Plugins;
-using NuGetOpCredentialProvider.Config;
-using NuGetOpCredentialProvider.Credentials;
-using NuGetOpCredentialProvider.Handlers;
-using NuGetOpCredentialProvider.Tests.Support;
+using NuGetSecretCliCredentials.Config;
+using NuGetSecretCliCredentials.Credentials;
+using NuGetSecretCliCredentials.Handlers;
+using NuGetSecretCliCredentials.Tests.Support;
 
-namespace NuGetOpCredentialProvider.Tests;
+namespace NuGetSecretCliCredentials.Tests;
 
 /// <summary>Drives the request handlers with NuGet.Protocol's own request types, against fake <c>op</c> and <c>gh</c>.</summary>
 public sealed class ProtocolInProcessTests

@@ -8,7 +8,7 @@ packages:
 }:
 
 let
-  cfg = config.programs.nuget-op-credential-provider;
+  cfg = config.programs.nuget-secret-cli-credentials;
   inherit (lib) mkOption types;
 
   sourceType = types.submodule {
@@ -45,7 +45,7 @@ let
       ;
   };
 
-  configFile = (pkgs.formats.json { }).generate "nuget-op-credential-provider.json" settings;
+  configFile = (pkgs.formats.json { }).generate "nuget-secret-cli-credentials.json" settings;
 
   # NuGet caches each plugin's operation claims for 30 days; drop them whenever the plugin or its sources change.
   clearPluginsCache = ''
@@ -53,13 +53,13 @@ let
   '';
 in
 {
-  options.programs.nuget-op-credential-provider = {
+  options.programs.nuget-secret-cli-credentials = {
     enable = lib.mkEnableOption "the nuget-plugin-op NuGet credential provider";
 
     package = mkOption {
       type = types.package;
       default = packages.${pkgs.stdenv.hostPlatform.system}.default;
-      defaultText = lib.literalExpression "nuget-op-credential-provider.packages.\${system}.default";
+      defaultText = lib.literalExpression "nuget-secret-cli-credentials.packages.\${system}.default";
       description = "The plugin package.";
     };
 
@@ -119,7 +119,7 @@ in
       onChange = clearPluginsCache;
     };
 
-    xdg.configFile."nuget-op-credential-provider/config.json" = {
+    xdg.configFile."nuget-secret-cli-credentials/config.json" = {
       source = configFile;
       onChange = clearPluginsCache;
     };

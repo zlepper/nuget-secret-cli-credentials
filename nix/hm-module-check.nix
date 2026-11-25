@@ -22,7 +22,7 @@ let
       module
       {
         _module.args.pkgs = pkgs;
-        programs.nuget-op-credential-provider = {
+        programs.nuget-secret-cli-credentials = {
           enable = true;
           account = "team.1password.com";
           sources = [
@@ -44,9 +44,9 @@ let
 
   inherit (evaluated) config;
   pluginLink = config.home.file.".nuget/plugins/netcore/nuget-plugin-op";
-  configFile = config.xdg.configFile."nuget-op-credential-provider/config.json";
+  configFile = config.xdg.configFile."nuget-secret-cli-credentials/config.json";
 in
-pkgs.runCommand "nuget-op-credential-provider-hm-module-check"
+pkgs.runCommand "nuget-secret-cli-credentials-hm-module-check"
   {
     nativeBuildInputs = [ pkgs.jq ];
     pluginSource = pluginLink.source;

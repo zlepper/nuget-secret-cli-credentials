@@ -1,4 +1,4 @@
-namespace NuGetOpCredentialProvider.Secrets;
+namespace NuGetSecretCliCredentials.Secrets;
 
 internal enum SecretReferenceKind
 {

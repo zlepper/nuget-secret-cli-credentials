@@ -1,7 +1,7 @@
 using NuGet.Protocol.Plugins;
-using NuGetOpCredentialProvider.Logging;
+using NuGetSecretCliCredentials.Logging;
 
-namespace NuGetOpCredentialProvider.Handlers;
+namespace NuGetSecretCliCredentials.Handlers;
 
 internal sealed class InitializeRequestHandler(IPluginLog log) : RequestHandlerBase<InitializeRequest, InitializeResponse>(log)
 {

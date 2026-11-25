@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace NuGetOpCredentialProvider.Secrets;
+namespace NuGetSecretCliCredentials.Secrets;
 
 internal sealed class ProcessResult
 {

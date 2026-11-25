@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using System.Text.Json.Nodes;
-using NuGetOpCredentialProvider.Tests.Support;
+using NuGetSecretCliCredentials.Tests.Support;
 
-namespace NuGetOpCredentialProvider.Tests;
+namespace NuGetSecretCliCredentials.Tests;
 
 /// <summary>
 /// Runs a real <c>dotnet restore</c> against a feed that requires basic auth, with a NuGet.Config that has no

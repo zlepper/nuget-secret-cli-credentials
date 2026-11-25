@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace NuGetOpCredentialProvider.Tests.Support;
+namespace NuGetSecretCliCredentials.Tests.Support;
 
 internal static class PluginLocation
 {

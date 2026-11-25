@@ -1,4 +1,4 @@
-namespace NuGetOpCredentialProvider.Tests.Support;
+namespace NuGetSecretCliCredentials.Tests.Support;
 
 /// <summary>What a fake <c>op</c> or <c>gh</c> does when it is asked for a secret.</summary>
 internal sealed record FakeBehavior

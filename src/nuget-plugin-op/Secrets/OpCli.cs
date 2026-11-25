@@ -1,8 +1,8 @@
 using NuGet.Common;
-using NuGetOpCredentialProvider.Config;
-using NuGetOpCredentialProvider.Logging;
+using NuGetSecretCliCredentials.Config;
+using NuGetSecretCliCredentials.Logging;
 
-namespace NuGetOpCredentialProvider.Secrets;
+namespace NuGetSecretCliCredentials.Secrets;
 
 /// <summary>Reads secrets with the 1Password CLI (<c>op read</c>).</summary>
 internal sealed class OpCli(PluginConfig config, IPluginLog log, string? pathVariable)

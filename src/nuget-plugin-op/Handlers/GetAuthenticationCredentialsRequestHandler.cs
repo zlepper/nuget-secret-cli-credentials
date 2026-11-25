@@ -1,6 +1,6 @@
 using NuGet.Protocol.Plugins;
 
-namespace NuGetOpCredentialProvider.Handlers;
+namespace NuGetSecretCliCredentials.Handlers;
 
 internal sealed class GetAuthenticationCredentialsRequestHandler(PluginContext context, TimeSpan progressInterval)
     : RequestHandlerBase<GetAuthenticationCredentialsRequest, GetAuthenticationCredentialsResponse>(context.Log)

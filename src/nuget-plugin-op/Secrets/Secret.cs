@@ -1,4 +1,4 @@
-namespace NuGetOpCredentialProvider.Secrets;
+namespace NuGetSecretCliCredentials.Secrets;
 
 /// <summary>
 /// Holds a secret value. <see cref="ToString"/> never reveals it, so interpolating or logging one by accident is

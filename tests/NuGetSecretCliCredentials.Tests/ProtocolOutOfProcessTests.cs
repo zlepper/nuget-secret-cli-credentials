@@ -1,9 +1,9 @@
 using System.Diagnostics;
 using System.Text.Json.Nodes;
 using NuGet.Protocol.Plugins;
-using NuGetOpCredentialProvider.Tests.Support;
+using NuGetSecretCliCredentials.Tests.Support;
 
-namespace NuGetOpCredentialProvider.Tests;
+namespace NuGetSecretCliCredentials.Tests;
 
 /// <summary>Runs the built plugin with <c>-Plugin</c> and talks to it over stdin/stdout like NuGet does.</summary>
 public sealed class ProtocolOutOfProcessTests

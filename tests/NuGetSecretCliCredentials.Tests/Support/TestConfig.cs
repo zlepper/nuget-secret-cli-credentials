@@ -1,8 +1,8 @@
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using NuGetOpCredentialProvider.Config;
+using NuGetSecretCliCredentials.Config;
 
-namespace NuGetOpCredentialProvider.Tests.Support;
+namespace NuGetSecretCliCredentials.Tests.Support;
 
 internal static class TestConfig
 {

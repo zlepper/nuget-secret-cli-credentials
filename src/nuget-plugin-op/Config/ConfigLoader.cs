@@ -1,7 +1,7 @@
-using NuGetOpCredentialProvider.Secrets;
+using NuGetSecretCliCredentials.Secrets;
 using System.Text.Json;
 
-namespace NuGetOpCredentialProvider.Config;
+namespace NuGetSecretCliCredentials.Config;
 
 internal sealed class ConfigLoadResult
 {
@@ -26,10 +26,10 @@ internal sealed class ConfigLoadResult
 
 internal static class ConfigLoader
 {
-    private const string AppDirectoryName = "nuget-op-credential-provider";
+    private const string AppDirectoryName = "nuget-secret-cli-credentials";
     private static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(120);
 
-    /// <summary><c>$XDG_CONFIG_HOME/nuget-op-credential-provider/config.json</c>, falling back to <c>~/.config</c>.</summary>
+    /// <summary><c>$XDG_CONFIG_HOME/nuget-secret-cli-credentials/config.json</c>, falling back to <c>~/.config</c>.</summary>
     public static string DefaultPath(Func<string, string?> getEnvironmentVariable)
     {
         var xdgConfigHome = getEnvironmentVariable("XDG_CONFIG_HOME");

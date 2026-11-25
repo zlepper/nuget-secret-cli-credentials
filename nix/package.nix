@@ -37,6 +37,8 @@ buildDotnetModule {
 
   meta = {
     description = "NuGet credential provider that reads feed tokens from 1Password (op) or the GitHub CLI (gh)";
+    homepage = "https://github.com/zlepper/nuget-secret-cli-credentials";
+    license = lib.licenses.mit;
     platforms = [
       "x86_64-linux"
       "aarch64-linux"

@@ -5,7 +5,7 @@ using System.Text;
 using NuGet.Packaging;
 using NuGet.Versioning;
 
-namespace NuGetOpCredentialProvider.Tests.Support;
+namespace NuGetSecretCliCredentials.Tests.Support;
 
 /// <summary>
 /// A minimal NuGet v3 feed (service index plus flat container) serving one package, which answers 401 to every

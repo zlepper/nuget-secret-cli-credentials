@@ -1,7 +1,7 @@
 using NuGet.Protocol.Plugins;
-using NuGetOpCredentialProvider.Config;
+using NuGetSecretCliCredentials.Config;
 
-namespace NuGetOpCredentialProvider.Handlers;
+namespace NuGetSecretCliCredentials.Handlers;
 
 internal sealed class GetOperationClaimsRequestHandler(PluginContext context)
     : RequestHandlerBase<GetOperationClaimsRequest, GetOperationClaimsResponse>(context.Log)

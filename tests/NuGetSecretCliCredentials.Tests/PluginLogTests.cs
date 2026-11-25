@@ -1,7 +1,7 @@
 using NuGet.Common;
-using NuGetOpCredentialProvider.Logging;
+using NuGetSecretCliCredentials.Logging;
 
-namespace NuGetOpCredentialProvider.Tests;
+namespace NuGetSecretCliCredentials.Tests;
 
 public sealed class PluginLogTests
 {

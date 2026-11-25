@@ -5,7 +5,7 @@ using NuGet.Common;
 using NuGet.Protocol.Plugins;
 using NuGet.Versioning;
 
-namespace NuGetOpCredentialProvider.Tests.Support;
+namespace NuGetSecretCliCredentials.Tests.Support;
 
 /// <summary>
 /// Plays NuGet's side of the plugin protocol against the real plugin process, using NuGet.Protocol's

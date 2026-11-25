@@ -1,10 +1,10 @@
 using System.Diagnostics;
 using System.Text.Json.Nodes;
-using NuGetOpCredentialProvider.Config;
-using NuGetOpCredentialProvider.Secrets;
-using NuGetOpCredentialProvider.Tests.Support;
+using NuGetSecretCliCredentials.Config;
+using NuGetSecretCliCredentials.Secrets;
+using NuGetSecretCliCredentials.Tests.Support;
 
-namespace NuGetOpCredentialProvider.Tests;
+namespace NuGetSecretCliCredentials.Tests;
 
 public sealed class SecretReadingTests
 {

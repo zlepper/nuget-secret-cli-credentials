@@ -1,6 +1,6 @@
 using NuGet.Common;
 
-namespace NuGetOpCredentialProvider.Logging;
+namespace NuGetSecretCliCredentials.Logging;
 
 /// <summary>Diagnostics sink. Never pass secret values to it.</summary>
 internal interface IPluginLog

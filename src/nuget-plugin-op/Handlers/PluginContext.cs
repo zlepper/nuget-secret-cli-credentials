@@ -1,9 +1,9 @@
 using NuGet.Common;
-using NuGetOpCredentialProvider.Config;
-using NuGetOpCredentialProvider.Credentials;
-using NuGetOpCredentialProvider.Logging;
+using NuGetSecretCliCredentials.Config;
+using NuGetSecretCliCredentials.Credentials;
+using NuGetSecretCliCredentials.Logging;
 
-namespace NuGetOpCredentialProvider.Handlers;
+namespace NuGetSecretCliCredentials.Handlers;
 
 /// <summary>State shared by the request handlers.</summary>
 internal sealed class PluginContext(ConfigLoadResult configLoad, CredentialService? credentials, IPluginLog log)

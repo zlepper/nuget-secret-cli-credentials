@@ -1,4 +1,4 @@
-# nuget-op-credential-provider
+# nuget-secret-cli-credentials
 
 A NuGet credential provider (`nuget-plugin-op`) that reads feed tokens at restore time from **1Password**, through
 the `op` CLI, or from the **GitHub CLI**'s own login, through `gh auth token`. No token is ever written to
@@ -25,24 +25,24 @@ The flake provides the package and a home-manager module. The module:
 
 ```nix
 # flake.nix of your system configuration
-inputs.nuget-op-credential-provider = {
-  url = "git+file:///home/you/projects/nuget-op-credential-provider"; # or a git remote
+inputs.nuget-secret-cli-credentials = {
+  url = "github:zlepper/nuget-secret-cli-credentials";
   inputs.nixpkgs.follows = "nixpkgs";
 };
 ```
 
 ```nix
 # the NixOS module that sets up home-manager, with the flake inputs in specialArgs
-{ nuget-op-credential-provider, ... }:
+{ nuget-secret-cli-credentials, ... }:
 {
-  home-manager.sharedModules = [ nuget-op-credential-provider.homeManagerModules.default ];
+  home-manager.sharedModules = [ nuget-secret-cli-credentials.homeManagerModules.default ];
 }
 ```
 
 ```nix
 # any home-manager module
 {
-  programs.nuget-op-credential-provider = {
+  programs.nuget-secret-cli-credentials = {
     enable = true;
     sources = [
       {
@@ -55,7 +55,7 @@ inputs.nuget-op-credential-provider = {
 }
 ```
 
-### Options (`programs.nuget-op-credential-provider.*`)
+### Options (`programs.nuget-secret-cli-credentials.*`)
 
 | Option | Default | Meaning |
 |---|---|---|
@@ -70,7 +70,7 @@ inputs.nuget-op-credential-provider = {
 
 ### Config file
 
-The module writes `$XDG_CONFIG_HOME/nuget-op-credential-provider/config.json` (default `~/.config/…`). It holds
+The module writes `$XDG_CONFIG_HOME/nuget-secret-cli-credentials/config.json` (default `~/.config/…`). It holds
 references only, never secrets. Without Nix, write it by hand:
 
 ```json
