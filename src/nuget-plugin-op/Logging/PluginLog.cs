@@ -4,9 +4,10 @@ using NuGet.Protocol.Plugins;
 namespace NuGetOpCredentialProvider.Logging;
 
 /// <summary>
-/// Writes to stderr until NuGet has sent <c>SetLogLevel</c>, then forwards messages at or above that level through
-/// the protocol's <c>Log</c> message. Never writes to stdout, which is the protocol channel.
+/// Until NuGet has sent <c>SetLogLevel</c>, writes warnings and errors to stderr; after that, forwards messages at or
+/// above that level through the protocol's <c>Log</c> message. Never writes to stdout, which is the protocol channel.
 /// </summary>
+/// <remarks>NuGet doesn't redirect the plugin's stderr, so anything written there lands in the user's terminal.</remarks>
 internal sealed class PluginLog(TextWriter standardError) : IPluginLog
 {
     private const string Prefix = "[nuget-plugin-op] ";
@@ -42,6 +43,11 @@ internal sealed class PluginLog(TextWriter standardError) : IPluginLog
 
         if (connection is null || minimumLevel is null)
         {
+            if (level < LogLevel.Warning)
+            {
+                return;
+            }
+
             lock (_lock)
             {
                 standardError.WriteLine($"{Prefix}{level}: {message}");
